@@ -29,7 +29,7 @@ knowledge, hands-on labs, practical exercises, and personal notes.
 
 ##  Learning Approach
 
-> Learn → Practice → Document → Build
+ Learn → Practice → Document → Build
 
 This repository is continuously updated as I learn and practice new
 cybersecurity concepts.
