@@ -2,127 +2,173 @@
 
 ##  Overview
 
-The TCP/IP model is a networking model used to describe how devices
-communicate over a network.
+The TCP/IP (Transmission Control Protocol / Internet Protocol) model is a framework used to understand how devices communicate over a network.
 
-Unlike the OSI model, which has seven layers, the TCP/IP model is
-commonly represented using **four layers**.
+It is the foundation of modern networking and the Internet.
 
----
-
-##  The 4 Layers
-
-| Layer | Name | Main Function | Examples |
-|---|---|---|---|
-| 4 | Application | Provides network services to applications | HTTP, HTTPS, DNS, FTP, SSH |
-| 3 | Transport | Provides end-to-end communication | TCP, UDP |
-| 2 | Internet | Handles addressing and routing | IP, ICMP |
-| 1 | Network Access | Handles communication over the local network | Ethernet, Wi-Fi, ARP |
+Unlike the OSI model, which contains seven layers, the TCP/IP model is commonly represented using four layers.
 
 ---
 
-##  TCP/IP Communication
+##  The Four Layers of the TCP/IP Model
 
-When a device sends data, the data moves down through the TCP/IP layers:
+| Layer | Function | Examples |
+|---------|------------|------------|
+| Application | Provides services to applications | HTTP, HTTPS, DNS, FTP, SSH |
+| Transport | Handles end-to-end communication | TCP, UDP |
+| Internet | Handles addressing and routing | IP, ICMP |
+| Network Access | Handles local network communication | Ethernet, Wi-Fi, ARP |
 
-**Application → Transport → Internet → Network Access**
+---
 
-At the receiving device, the process is reversed:
+##  How Data Travels
 
-**Network Access → Internet → Transport → Application**
+When a user accesses a website:
+
+```text
+Application Layer
+        ↓
+Transport Layer
+        ↓
+Internet Layer
+        ↓
+Network Access Layer
+```
+
+At the receiving device, the process is reversed.
 
 ---
 
 ##  TCP vs UDP
 
-### TCP
+### TCP (Transmission Control Protocol)
 
-TCP is connection-oriented and provides reliable data transmission.
+TCP is connection-oriented and reliable.
 
-It includes mechanisms such as:
+Features:
 
-- Connection establishment
+- Three-way handshake
 - Sequencing
 - Acknowledgments
 - Retransmission
 - Flow control
 
-Examples of protocols that commonly use TCP:
+Examples:
 
-- HTTP/HTTPS
+- HTTP
+- HTTPS
 - SSH
 - FTP
 
-### UDP
+### UDP (User Datagram Protocol)
 
-UDP is connectionless and does not provide the same reliability mechanisms
-as TCP.
-
-It is generally faster and has lower overhead.
+UDP is connectionless and faster.
 
 Examples:
 
 - DNS
 - DHCP
+- Streaming
 - VoIP
-- Streaming applications
 
 ---
 
-##  Security Perspective
+##  Cybersecurity Perspective
 
-Understanding TCP/IP is essential for cybersecurity because many
-security tools and attacks rely on network communication.
+Understanding TCP/IP is essential in cybersecurity because many attacks and security tools rely on network communication.
 
-### Examples
+Examples:
 
-**Nmap**
+### Nmap
 
-Can be used to discover open ports and identify services.
+Can identify:
 
-**Wireshark**
+- Open ports
+- Running services
+- Operating systems
 
-Can be used to capture and analyze network traffic.
+Example:
 
-**Firewalls**
+```bash
+nmap 192.168.1.10
+```
 
-Can filter network traffic based on parameters such as:
+### Wireshark
+
+Can capture and analyze packets.
+
+Example information:
 
 - Source IP
 - Destination IP
-- Port
 - Protocol
+- Port numbers
+
+### Firewalls
+
+Firewalls can filter traffic based on:
+
+- IP addresses
+- Ports
+- Protocols
 
 ---
 
+##  Practical Example
 
-## TCP/IP and OSI
-The TCP/IP model and OSI model are not identical, but they can be
-mapped approximately:
+When visiting:
 
-| TCP/IP Model | OSI Model|
-|---|---|
-| Application | Application | 
-| Application| Presentation |
-| Application | Session |
-| Transport |Transport |
-| Internet |Network |
-| Network Access |Data Link |
-| Network Access |Physical |
+https://example.com
+
+The communication may look like:
+
+```text
+Browser
+   ↓
+HTTPS
+   ↓
+TCP
+   ↓
+IP
+   ↓
+Ethernet / Wi-Fi
+```
+
+Each layer has a specific responsibility.
 
 ---
-## Key Takeaways
-- TCP/IP is a fundamental model for understanding network communication.
-- TCP provides reliable, connection-oriented communication.
-- UDP provides faster, connectionless communication.
-- IP is responsible for logical addressing and routing.
-- Understanding TCP/IP is essential for network security and penetration testing.
- ---
-## What I Learned
--The four layers of the TCP/IP model.
--The difference between TCP and UDP.
--How IP and TCP work together.
--How networking concepts are connected to cybersecurity tools such as Nmap and Wireshark.
 
+##  Relationship with the OSI Model
 
+| OSI Model | TCP/IP Model |
+|------------|-------------|
+| Application | Application |
+| Presentation | Application |
+| Session | Application |
+| Transport | Transport |
+| Network | Internet |
+| Data Link | Network Access |
+| Physical | Network Access |
 
+---
+
+##  Key Takeaways
+
+- TCP/IP contains four layers.
+- TCP provides reliable communication.
+- UDP provides faster communication.
+- IP is responsible for addressing and routing.
+- Understanding TCP/IP is important for networking and cybersecurity.
+
+---
+
+##  What I Learned
+
+- The four layers of the TCP/IP model.
+- The difference between TCP and UDP.
+- How devices communicate over networks.
+- Why TCP/IP knowledge is important in cybersecurity.
+---
+##  Related Topics
+
+- [OSI Model](osi-model.md)
