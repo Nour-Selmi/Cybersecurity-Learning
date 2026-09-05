@@ -249,3 +249,9 @@ Usable host range:
 -Subnet masks separate network and host portions.</br>
 -CIDR notation represents network prefixes.</br>
 -IP addressing is important for scanning, routing, firewall rules, and network segmentation.</br>
+
+----
+##  Related Topics
+
+- [OSI Model](osi-model.md)
+- [TCP/IP](tcp-ip.md)
